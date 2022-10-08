@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_home"
+    app:startDestination="@id/navigation_home">
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.week2.Netflixclone.HomeFragment"
+        android:label="HomeFragment" />
+    <fragment
+        android:id="@+id/navigation_stored"
+        android:name="com.week2.Netflixclone.StoredFragment"
+        android:label="StoredFragment" />
+    <fragment
+        android:id="@+id/navigation_newhot"
+        android:name="com.week2.Netflixclone.NewhotFragment"
+        android:label="NewhotFragment" />
+    <fragment
+        android:id="@+id/navigation_game"
+        android:name="com.week2.Netflixclone.GameFragment"
+        android:label="GameFragment" />
+</navigation>
