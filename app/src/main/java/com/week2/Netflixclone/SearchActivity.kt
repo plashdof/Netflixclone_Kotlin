@@ -6,19 +6,17 @@ import android.text.TextWatcher
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
+import com.week2.Netflixclone.Retromovie.CLIENT_ID
+import com.week2.Netflixclone.Retromovie.CLIENT_SECRET
+import com.week2.Netflixclone.Retromovie.buildRetro
+import com.week2.Netflixclone.Retromovie.startApi
 import com.week2.Netflixclone.adapter.SearchAdapter
 import com.week2.Netflixclone.databinding.ActivitySearchBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 class SearchActivity : AppCompatActivity(){
-
-    val CLIENT_ID = "le7B3SvvYC8DIrustMLq"
-    val CLIENT_SECRET = "h8zw5x6YUr"
-    val BASE_URL_NAVER_API = "https://openapi.naver.com"
 
 
     private lateinit var searchAdapter: SearchAdapter
@@ -55,23 +53,25 @@ class SearchActivity : AppCompatActivity(){
     }
 
     private fun getMovieAPI(){
-        val retrofit = Retrofit.Builder()
-            .baseUrl(BASE_URL_NAVER_API)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-        val api = retrofit.create(NaverAPI::class.java)
-        val callMovieData = api.getMoviePoster(CLIENT_ID, CLIENT_SECRET, searchtext)
 
-        callMovieData.enqueue(object : Callback<MovieData> {
+        buildRetro
+        startApi.getMoviePoster(CLIENT_ID, CLIENT_SECRET, searchtext, 100, 1)
+           .enqueue(object : Callback<MovieData> {
             override fun onResponse(
                 call: Call<MovieData>,
                 response: Response<MovieData>
             ) {
-                movieList = arrayListOf(
-                    response.body()!!.image
-                )
-                Log.d("결과", "${response.body()}")
-                Log.d("결과", "${response.raw()}")
+                Log.d("결과", "${response.body()!!.items}")
+                val size = response.body()!!.items.size
+                movieList = arrayListOf()
+
+                if(size != 0){
+                    for(i in 0 until size){
+                        if(response.body()!!.items[i].image != ""){
+                            movieList.add(response.body()!!.items[i].image)
+                        }
+                    }
+                }
 
                 recycler()
 

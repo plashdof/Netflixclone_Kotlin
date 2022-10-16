@@ -1,15 +1,19 @@
 package com.week2.Netflixclone.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.week2.Netflixclone.databinding.RecyclerMovieposterBinding
 
-class MovieAdapter(private val datas: ArrayList<Int>) : RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
+class MovieAdapter(private val datas: ArrayList<String>) : RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
 
     inner class ViewHolder(private val viewBinding: RecyclerMovieposterBinding):RecyclerView.ViewHolder(viewBinding.root){
-        fun bind(item: Int) {
-            viewBinding.homeMovieBtn.setImageResource(item)
+        fun bind(item: String) {
+            Glide.with(itemView)
+                .load(item)
+                .into(viewBinding.homeMovieBtn)
         }
 
     }

@@ -1,8 +1,11 @@
 package com.week2.Netflixclone
 
-import com.google.gson.annotations.SerializedName
 
 data class MovieData(
-    @SerializedName("image")
-    val image: String
+    var items: List<Items>
+)
+
+data class Items(
+    var title: String = "",
+    var image: String = "",
 )

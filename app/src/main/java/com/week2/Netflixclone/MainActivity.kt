@@ -57,6 +57,8 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this,"프로필이 추가되지 않았습니다",Toast.LENGTH_SHORT).show()
         }
 
+
+
     }
 
     private fun moveToTest(){
