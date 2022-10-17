@@ -156,7 +156,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         // 어뎁터 연결 &레이아웃 매니저 호출 & 레이아웃 설정
-        val adapter = ProfileAdapter(data, name, email)
+        val adapter = ProfileAdapter(data)
         binding.mainProfiles.layoutManager = GridLayoutManager(this@MainActivity, 2)
         binding.mainProfiles.adapter = adapter
     }

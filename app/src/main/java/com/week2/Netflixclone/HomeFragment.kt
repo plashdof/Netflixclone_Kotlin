@@ -22,7 +22,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class HomeFragment(val name: String?, val email: String?) : Fragment() {
+class HomeFragment() : Fragment() {
     private lateinit var movieAdapter: MovieAdapter
     private lateinit var binding: FragmentHomeBinding
 
@@ -30,8 +30,6 @@ class HomeFragment(val name: String?, val email: String?) : Fragment() {
     val top10dataImg: ArrayList<String> = arrayListOf()
 
     val koreandata: ArrayList<String> = arrayListOf()
-    val koreandataImg: ArrayList<String> = arrayListOf()
-
     val thrillerdata: ArrayList<String> = arrayListOf()
     val romancedata: ArrayList<String> = arrayListOf()
     val animationdata: ArrayList<String> = arrayListOf()
@@ -54,10 +52,53 @@ class HomeFragment(val name: String?, val email: String?) : Fragment() {
 
         binding.homeProfileBtn.setOnClickListener {
             val intent = Intent(context, SettingActivity::class.java)
-                .putExtra("name", name)
-                .putExtra("email", email)
             startActivity(intent)
         }
+
+        koreandata.apply{
+            for(i in 0 until 5){
+                add("https://ssl.pstatic.net/imgmovie/mdi/mit110/2134/213481_P13_180201.jpg")
+                add("https://ssl.pstatic.net/imgmovie/mdi/mit110/2133/213383_P01_171412.png")
+                add("https://ssl.pstatic.net/imgmovie/mdi/mit110/2134/213487_P17_153028.jpg")
+                add("https://ssl.pstatic.net/imgmovie/mdi/mit110/2198/219834_P13_110945.jpg")
+                add("https://ssl.pstatic.net/imgmovie/mdi/mit110/2200/220044_P12_163612.jpg")
+            }
+        }
+
+        thrillerdata.apply{
+            for(i in 0 until 5){
+                add("https://ssl.pstatic.net/imgmovie/mdi/mit110/2200/220044_P12_163612.jpg")
+                add("https://ssl.pstatic.net/imgmovie/mdi/mit110/2134/213481_P13_180201.jpg")
+                add("https://ssl.pstatic.net/imgmovie/mdi/mit110/2134/213487_P17_153028.jpg")
+                add("https://ssl.pstatic.net/imgmovie/mdi/mit110/2133/213383_P01_171412.png")
+                add("https://ssl.pstatic.net/imgmovie/mdi/mit110/2198/219834_P13_110945.jpg")
+
+            }
+        }
+
+        romancedata.apply{
+            for(i in 0 until 5){
+                add("https://ssl.pstatic.net/imgmovie/mdi/mit110/2198/219834_P13_110945.jpg")
+                add("https://ssl.pstatic.net/imgmovie/mdi/mit110/2200/220044_P12_163612.jpg")
+                add("https://ssl.pstatic.net/imgmovie/mdi/mit110/2133/213383_P01_171412.png")
+                add("https://ssl.pstatic.net/imgmovie/mdi/mit110/2134/213481_P13_180201.jpg")
+                add("https://ssl.pstatic.net/imgmovie/mdi/mit110/2134/213487_P17_153028.jpg")
+            }
+        }
+
+        animationdata.apply{
+            for(i in 0 until 5){
+                add("https://ssl.pstatic.net/imgmovie/mdi/mit110/2134/213481_P13_180201.jpg")
+                add("https://ssl.pstatic.net/imgmovie/mdi/mit110/2200/220044_P12_163612.jpg")
+                add("https://ssl.pstatic.net/imgmovie/mdi/mit110/2198/219834_P13_110945.jpg")
+                add("https://ssl.pstatic.net/imgmovie/mdi/mit110/2133/213383_P01_171412.png")
+                add("https://ssl.pstatic.net/imgmovie/mdi/mit110/2134/213487_P17_153028.jpg")
+            }
+        }
+
+        recycler()
+
+
 
         return binding.root
     }
@@ -108,7 +149,6 @@ class HomeFragment(val name: String?, val email: String?) : Fragment() {
                             }
                         }
                         if (targetrecycler == "top10") top10recycler()
-                        if (targetrecycler == "korean") koreanrecycler()
 
                     }
                 }
@@ -127,32 +167,27 @@ class HomeFragment(val name: String?, val email: String?) : Fragment() {
 
     }
 
-    private fun koreanrecycler() {
-        val koreanAdapter = MovieAdapter(koreandataImg)
+    private fun recycler() {
+        val koreanAdapter = MovieAdapter(koreandata)
         binding.homeRecyclerKorean.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.homeRecyclerKorean.adapter = koreanAdapter
-    }
 
-    private fun thrillerrecycler() {
         val thrillerAdapter = MovieAdapter(thrillerdata)
         binding.homeRecyclerThriller.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.homeRecyclerThriller.adapter = thrillerAdapter
-    }
 
-    private fun romancerecycler() {
         val romanceAdapter = MovieAdapter(romancedata)
         binding.homeRecyclerRomance.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.homeRecyclerRomance.adapter = romanceAdapter
-    }
 
-    private fun animationrecycler() {
         val animationAdapter = MovieAdapter(animationdata)
         binding.homeRecyclerAnimation.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.homeRecyclerAnimation.adapter = animationAdapter
     }
+
 
 }

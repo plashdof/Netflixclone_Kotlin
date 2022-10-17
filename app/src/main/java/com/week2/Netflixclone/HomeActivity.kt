@@ -17,21 +17,18 @@ class HomeActivity : AppCompatActivity() {
         val bnView = findViewById<BottomNavigationView>(R.id.home_navigation)
         bnView.itemIconTintList = null
 
-        val name = intent.getStringExtra("name")
-        val email = intent.getStringExtra("email")
-
         // BottomNavigationView 로 Fragment 전환하는 로직
 
-        supportFragmentManager.beginTransaction().add(frame_container.id, HomeFragment(name, email))
+        supportFragmentManager.beginTransaction().add(frame_container.id, HomeFragment())
             .commit()
         bnView.setOnItemSelectedListener {
             changePage(
                 when (it.itemId) {
-                    R.id.navigation_home -> HomeFragment(name, email)
+                    R.id.navigation_home -> HomeFragment()
                     R.id.navigation_game -> GameFragment()
                     R.id.navigation_newhot -> NewhotFragment()
                     R.id.navigation_stored -> StoredFragment()
-                    else -> HomeFragment(name, email)
+                    else -> HomeFragment()
                 }
             )
             true

@@ -19,6 +19,4 @@ object Retromovie {
         api = buildRetro.create(NaverAPI::class.java)
     }
 
-
-
 }

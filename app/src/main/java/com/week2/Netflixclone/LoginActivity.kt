@@ -24,7 +24,8 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val loginbtn = binding.btnLogin
-
+        
+        // 네아로 객체 초기화
         NaverIdLoginSDK.initialize(this, CLIENT_ID, CLIENT_SECRET, CLIENT_NAME)
 
         loginbtn.setOnClickListener {

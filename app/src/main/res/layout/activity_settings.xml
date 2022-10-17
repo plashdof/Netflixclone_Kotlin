@@ -29,14 +29,38 @@
     </androidx.appcompat.widget.Toolbar>
 
     <LinearLayout
-        android:id="@+id/setting_nameLinear"
+        android:id="@+id/setting_idLinear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
         android:orientation="horizontal"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/setting_toolbar">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID :"
+            android:textColor="@color/netflix_white" />
+
+        <TextView
+            android:id="@+id/setting_idtext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="1234"
+            android:textColor="@color/netflix_white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/setting_nameLinear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/setting_idLinear">
 
         <TextView
             android:layout_width="wrap_content"
@@ -76,6 +100,9 @@
             android:text="Noah"
             android:textColor="@color/netflix_white" />
     </LinearLayout>
+
+
+
 
     <Button
         android:id="@+id/btn_setting_logout"
