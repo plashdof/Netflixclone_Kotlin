@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.week2.Netflixclone.adapter.StoredMovieAdapter
 import com.week2.Netflixclone.databinding.FragmentStoredBinding
 
-class StoredFragment :Fragment(){
+class StoredFragment : Fragment() {
     private lateinit var binding: FragmentStoredBinding
 
 
@@ -20,10 +20,10 @@ class StoredFragment :Fragment(){
     ): View? {
         binding = FragmentStoredBinding.inflate(layoutInflater)
 
-        val storedmovie : ArrayList<Int> = arrayListOf()
+        val storedmovie: ArrayList<Int> = arrayListOf()
 
 
-        storedmovie.apply{
+        storedmovie.apply {
             add(R.drawable.movie1)
             add(R.drawable.movie2)
             add(R.drawable.movie3)
@@ -32,7 +32,8 @@ class StoredFragment :Fragment(){
         }
 
         val storedAdapter = StoredMovieAdapter(storedmovie)
-        binding.storedRecycler.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        binding.storedRecycler.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         binding.storedRecycler.adapter = storedAdapter
 
 

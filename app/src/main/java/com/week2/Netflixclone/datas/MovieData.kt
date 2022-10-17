@@ -1,4 +1,4 @@
-package com.week2.Netflixclone
+package com.week2.Netflixclone.datas
 
 
 data class MovieData(

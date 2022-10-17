@@ -1,4 +1,4 @@
-package com.week2.Netflixclone
+package com.week2.Netflixclone.datas
 
 import android.graphics.drawable.Drawable
 

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<HorizontalScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,53 +9,53 @@
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:layout_gravity="start">
+        android:layout_gravity="start"
+        android:orientation="horizontal">
 
         <ImageButton
             android:id="@+id/change_profile1"
-            android:layout_height="100dp"
             android:layout_width="100dp"
-            android:src="@drawable/profile1"
-            android:scaleType="fitCenter"
+            android:layout_height="100dp"
             android:layout_gravity="center"
-            android:background="@android:color/transparent"/>
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/profile1" />
 
         <ImageButton
             android:id="@+id/change_profile2"
+            android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
-            android:layout_width="100dp"
-            android:src="@drawable/profile2"
+            android:background="@android:color/transparent"
             android:scaleType="fitCenter"
-            android:background="@android:color/transparent"/>
+            android:src="@drawable/profile2" />
 
         <ImageButton
             android:id="@+id/change_profile3"
+            android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
-            android:layout_width="100dp"
-            android:src="@drawable/profile3"
+            android:background="@android:color/transparent"
             android:scaleType="fitCenter"
-            android:background="@android:color/transparent"/>
+            android:src="@drawable/profile3" />
 
         <ImageButton
             android:id="@+id/change_profile4"
+            android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
-            android:layout_width="100dp"
-            android:src="@drawable/profile4"
+            android:background="@android:color/transparent"
             android:scaleType="fitCenter"
-            android:background="@android:color/transparent"/>
+            android:src="@drawable/profile4" />
 
         <ImageButton
             android:id="@+id/change_profile5"
+            android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
-            android:layout_width="100dp"
-            android:src="@drawable/profile5"
+            android:background="@android:color/transparent"
             android:scaleType="fitCenter"
-            android:background="@android:color/transparent"/>
+            android:src="@drawable/profile5" />
 
 
     </LinearLayout>

@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/search_toolbar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
+            android:id="@+id/btn_search_goback"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:src="@drawable/goback"
             android:background="@android:color/transparent"
-            android:scaleType="fitCenter"/>
+            android:scaleType="fitCenter"
+            android:src="@drawable/goback" />
 
         <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:src="@drawable/profile1"
             android:layout_gravity="end"
-            android:layout_marginRight="10dp"/>
+            android:layout_marginRight="10dp"
+            android:src="@drawable/profile1" />
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -32,19 +33,19 @@
         android:id="@+id/search_searchbar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        app:layout_constraintTop_toBottomOf="@id/search_toolbar"
-        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/netflix_darkgray"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@color/netflix_darkgray">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_toolbar">
 
         <ImageButton
             android:id="@+id/search_btn"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:src="@drawable/home_search"
+            android:layout_gravity="start"
             android:background="@android:color/transparent"
             android:scaleType="fitCenter"
-            android:layout_gravity="start"/>
+            android:src="@drawable/home_search" />
 
         <EditText
             android:id="@+id/search_edittext"
@@ -53,8 +54,8 @@
             android:layout_marginLeft="30dp"
             android:hint="시리즈, 영화, 장르 등을 검색"
             android:textColor="@color/netflix_white"
-            android:textSize="15sp"
-            android:textColorHint="@color/netflix_gray"/>
+            android:textColorHint="@color/netflix_gray"
+            android:textSize="15sp" />
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -63,9 +64,9 @@
         android:id="@+id/search_recycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/search_searchbar"/>
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/search_searchbar" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

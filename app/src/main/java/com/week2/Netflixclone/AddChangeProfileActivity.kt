@@ -8,9 +8,9 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.week2.Netflixclone.databinding.ActivityAddchangeprofileBinding
 
-class AddChangeProfileActivity :AppCompatActivity() {
+class AddChangeProfileActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityAddchangeprofileBinding
+    private lateinit var binding: ActivityAddchangeprofileBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAddchangeprofileBinding.inflate(layoutInflater)
@@ -63,9 +63,9 @@ class AddChangeProfileActivity :AppCompatActivity() {
         return bitmap
     }
 
-    private fun movetoAddProfile(bitmap : Bitmap){
+    private fun movetoAddProfile(bitmap: Bitmap) {
         val intent = Intent(this@AddChangeProfileActivity, AddProfileActivity::class.java)
-            .putExtra("profileimg",bitmap)
+            .putExtra("profileimg", bitmap)
             .putExtra("changeprofile", "success")
         startActivity(intent)
     }

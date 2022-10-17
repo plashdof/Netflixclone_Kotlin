@@ -16,14 +16,18 @@
         android:theme="@style/Theme.Task2"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-        <activity
-            android:name="com.week2.Netflixclone.MainActivity"
+        <activity android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity
+            android:name="com.week2.Netflixclone.MainActivity"
+            android:exported="true">
         </activity>
         <activity android:name="com.week2.Netflixclone.AddProfileActivity">
 
@@ -38,10 +42,10 @@
         <activity android:name="com.week2.Netflixclone.AddChangeProfileActivity"
             android:theme="@style/Theme.AppCompat.Transparent.NoActionBar">
         </activity>
-        <activity android:name="com.week2.Netflixclone.TestActivity">
+        <activity android:name="com.week2.Netflixclone.SearchActivity">
 
         </activity>
-        <activity android:name="com.week2.Netflixclone.SearchActivity">
+        <activity android:name=".SettingActivity">
 
         </activity>
     </application>

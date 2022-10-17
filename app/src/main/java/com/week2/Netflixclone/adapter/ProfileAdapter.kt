@@ -8,11 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.week2.Netflixclone.HomeActivity
-import com.week2.Netflixclone.ProfileData
+import com.week2.Netflixclone.datas.ProfileData
 import com.week2.Netflixclone.databinding.RecyclerListItemBinding
 
 
-class ProfileAdapter(private val datas: ArrayList<ProfileData>) : RecyclerView.Adapter<ProfileAdapter.ViewHolder>(){
+class ProfileAdapter(private val datas: ArrayList<ProfileData>, val name : String?, val email : String?) : RecyclerView.Adapter<ProfileAdapter.ViewHolder>(){
 
 
     inner class ViewHolder(private val viewBinding: RecyclerListItemBinding):RecyclerView.ViewHolder(viewBinding.root){
@@ -27,6 +27,8 @@ class ProfileAdapter(private val datas: ArrayList<ProfileData>) : RecyclerView.A
             viewBinding.mainProfileBtn.setOnClickListener{
 
                 val intent = Intent(context, HomeActivity::class.java)
+                    .putExtra("name", name)
+                    .putExtra("email", email)
                 intent.run{context.startActivity(this)}
             }
         }

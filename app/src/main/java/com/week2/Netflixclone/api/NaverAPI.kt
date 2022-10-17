@@ -1,5 +1,6 @@
-package com.week2.Netflixclone
+package com.week2.Netflixclone.api
 
+import com.week2.Netflixclone.datas.MovieData
 import retrofit2.Call
 import retrofit2.http.*
 
